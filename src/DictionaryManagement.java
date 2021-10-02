@@ -4,13 +4,12 @@ import java.io.FileNotFoundException;
 
 public class DictionaryManagement {
     private Dictionary dictionary = new Dictionary();
-
+    private Scanner sc = new Scanner(System.in);
     public Dictionary getDictionary() {
         return dictionary;
     }
 
     public void insertFromCommandline() {
-        Scanner sc = new Scanner(System.in);
         dictionary.setNumWord(Integer.parseInt(sc.nextLine()));
         for (int i = 0; i < dictionary.getNumWord(); i++) {
             String a = sc.nextLine();
@@ -37,7 +36,20 @@ public class DictionaryManagement {
         }
     }
 
-    void dictionaryLookup() {
-
+    public void dictionaryLookup() {
+        while (sc.hasNextLine()) {
+            String findExplain = sc.nextLine();
+            boolean ok = false;
+            for (int i = 0; i < dictionary.getNumWord(); ++i) {
+                if (findExplain.equals(dictionary.wordList[i].getWord_target())) {
+                    System.out.println(dictionary.wordList[i].getWord_explain());
+                    ok = true;
+                    break;
+                }
+            }
+            if (!ok) {
+                System.out.println("Don't find word what you need :(");
+            }
+        }
     }
 }

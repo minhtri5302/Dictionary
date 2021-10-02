@@ -12,7 +12,7 @@ public class Word {
     }
 
     public String getWord_target() {
-        return word_target;
+        return this.word_target;
     }
 
     public void setWord_target(String word_target) {
@@ -20,7 +20,7 @@ public class Word {
     }
 
     public String getWord_explain() {
-        return word_explain;
+        return this.word_explain;
     }
 
     public void setWord_explain(String word_explain) {
