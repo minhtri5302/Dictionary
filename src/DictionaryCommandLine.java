@@ -1,16 +1,11 @@
 public class DictionaryCommandLine {
-    DictionaryManagement dictionaryManagement = new DictionaryManagement();
+    private DictionaryManagement dictionaryManagement = new DictionaryManagement();
 
     public void showAllWords() {
-        System.out.println("No   | English     | Vietnamese\n");
-        for (int i = 1; i <= dictionaryManagement.dictionary.numWord; i++) {
-            System.out.println(i + "    | "
-                    +
-                    dictionaryManagement.dictionary.wordList[i].getWord_target()
-                    +
-                    "     | "
-                    +
-                    dictionaryManagement.dictionary.wordList[i].getWord_explain() + "\n");
+        Dictionary dictionary = dictionaryManagement.getDictionary();
+        System.out.format("%-5s%-20s%-20s\n", "No", "|English", "|Vietnamese");
+        for (int i = 0; i < dictionary.getNumWord(); i++) {
+            System.out.format("%-5s%-20s%-20s\n", i + 1, dictionary.wordList[i].getWord_target(), dictionary.wordList[i].getWord_explain());
         }
     }
 
@@ -19,9 +14,14 @@ public class DictionaryCommandLine {
         showAllWords();
     }
 
+    public void dictionaryAdvanced() {
+        dictionaryManagement.insertFromFile();
+        showAllWords();
+        dictionaryManagement.dictionaryLookup();
+    }
+
     public static void main(String[] args) {
         DictionaryCommandLine p = new DictionaryCommandLine();
-        p.dictionaryBasic();
-        //Triii
+        p.dictionaryAdvanced();
     }
 }
