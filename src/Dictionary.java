@@ -1,4 +1,4 @@
 public class Dictionary {
-    int so_tu;
-    Word[] a = new Word[100];
+    int numWord;
+    Word[] wordList = new Word[100];
 }
