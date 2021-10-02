@@ -1,12 +1,14 @@
+import java.util.HashMap;
+
 public class Dictionary {
     private int numWord;
-    Word[] wordList = new Word[100];
+    private HashMap<String, String> wordList = new HashMap<>();
 
-    public int getNumWord() {
-        return numWord;
+    public HashMap<String, String> getWordList() {
+        return wordList;
     }
 
-    public void setNumWord(int numWord) {
-        this.numWord = numWord;
+    public void addWord(String target, String explain) {
+        wordList.put(target, explain);
     }
 }
