@@ -22,5 +22,6 @@ public class DictionaryCommandLine {
     public static void main(String[] args) {
         DictionaryCommandLine p = new DictionaryCommandLine();
         p.dictionaryBasic();
+        //Triii
     }
 }
