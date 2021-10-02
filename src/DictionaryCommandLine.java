@@ -1,11 +1,15 @@
+import java.util.HashMap;
+
 public class DictionaryCommandLine {
     private DictionaryManagement dictionaryManagement = new DictionaryManagement();
 
     public void showAllWords() {
         Dictionary dictionary = dictionaryManagement.getDictionary();
         System.out.format("%-5s%-20s%-20s\n", "No", "|English", "|Vietnamese");
-        for (int i = 0; i < dictionary.getNumWord(); i++) {
-            System.out.format("%-5s%-20s%-20s\n", i + 1, dictionary.wordList[i].getWord_target(), dictionary.wordList[i].getWord_explain());
+        HashMap<String, String> wordList = dictionary.getWordList();
+        int i = 0;
+        for (String s : wordList.keySet()) {
+            System.out.format("%-5s%-20s%-20s\n", ++i, s, wordList.get(s));
         }
     }
 
@@ -24,7 +28,4 @@ public class DictionaryCommandLine {
         DictionaryCommandLine p = new DictionaryCommandLine();
         p.dictionaryAdvanced();
     }
-    //
-    //Trii
-    //Dan
 }
