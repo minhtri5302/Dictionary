@@ -1,7 +1,6 @@
+import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.io.File;
-import java.io.FileNotFoundException;
 
 public class DictionaryManagement {
     private Dictionary dictionary = new Dictionary();
@@ -27,7 +26,9 @@ public class DictionaryManagement {
             Scanner myReader = new Scanner(myFile);
             while (myReader.hasNextLine()) {
                 String[] inputStr = myReader.nextLine().split(" ", 2);
-                dictionary.addWord(inputStr[0], inputStr[1]);
+                if (inputStr[0].equals("")) continue;
+                if (!dictionary.getWordList().containsKey(inputStr[0]))
+                    dictionary.addWord(inputStr[0], inputStr[1]);
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -42,6 +43,85 @@ public class DictionaryManagement {
             HashMap<String, String> wordList = dictionary.getWordList();
             System.out.println(wordList.getOrDefault(findExplain, "Don't find word what you need :("));
 
+        }
+    }
+
+    public boolean userAddWord() {
+        System.out.println("Nhập từ muốn thêm vào từ điển:");
+        String target, explain;
+        while (true) {
+            target = sc.nextLine();
+            if (!target.equals("")) break;
+        }
+        target = target.toLowerCase();
+        if (!dictionary.getWordList().containsKey(target)) {
+            System.out.println("Nhập nghĩa của từ trên:");
+            while (true) {
+                explain = sc.nextLine();
+                if (!explain.equals("")) break;
+            }
+            explain = explain.toLowerCase();
+            dictionary.addWord(target, explain);
+            dictionaryExportToFile();
+            return true;
+        } else {
+            System.out.println("Từ này đã có trong từ điển!");
+            return false;
+        }
+    }
+
+    public boolean userDeleteWord() {
+        System.out.println("Nhập từ muốn xoá khỏi từ điển:");
+        String target;
+        while (true) {
+            target = sc.nextLine();
+            if (!target.equals("")) break;
+        }
+        target = target.toLowerCase();
+        if (dictionary.getWordList().containsKey(target)) {
+            dictionary.deleteWord(target);
+            dictionaryExportToFile();
+            return true;
+        } else {
+            System.out.println("Từ này chưa có trong từ điển");
+            return false;
+        }
+    }
+
+    public boolean userEditWord() {
+        System.out.println("Nhập từ muốn sửa trong từ điển:");
+        String target, explain;
+        while (true) {
+            target = sc.nextLine();
+            if (!target.equals("")) break;
+        }
+        target = target.toLowerCase();
+        if (dictionary.getWordList().containsKey(target)) {
+            System.out.println("Nhập nghĩa của từ trên:");
+            while (true) {
+                explain = sc.nextLine();
+                if (!explain.equals("")) break;
+            }
+            explain = explain.toLowerCase();
+            dictionary.editWord(target, explain);
+            dictionaryExportToFile();
+            return true;
+        } else {
+            System.out.println("Từ này chưa có trong từ điển");
+            return false;
+        }
+    }
+
+    public void dictionaryExportToFile() {
+        try {
+            FileWriter fileWriter = new FileWriter("dictionaries.txt");
+            HashMap<String, String> wordList = dictionary.getWordList();
+            for (String s : wordList.keySet()) {
+                fileWriter.write(s + " " + wordList.get(s) + "\n");
+            }
+            fileWriter.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 }

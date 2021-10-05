@@ -9,6 +9,17 @@ public class Dictionary {
     }
 
     public void addWord(String target, String explain) {
+        target = target.toLowerCase();
         wordList.put(target, explain);
+    }
+
+    public void deleteWord(String target) {
+        target = target.toLowerCase();
+        wordList.remove(target);
+    }
+
+    public void editWord(String target, String explain) {
+        target = target.toLowerCase();
+        wordList.replace(target, explain);
     }
 }

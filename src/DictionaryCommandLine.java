@@ -27,5 +27,11 @@ public class DictionaryCommandLine {
     public static void main(String[] args) {
         DictionaryCommandLine p = new DictionaryCommandLine();
         p.dictionaryAdvanced();
+        while (true) {
+            p.dictionaryManagement.userAddWord();
+            p.dictionaryManagement.userDeleteWord();
+            p.dictionaryManagement.userEditWord();
+            p.dictionaryAdvanced();
+        }
     }
 }
