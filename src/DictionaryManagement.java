@@ -42,7 +42,6 @@ public class DictionaryManagement {
             String findExplain = sc.nextLine();
             HashMap<String, String> wordList = dictionary.getWordList();
             System.out.println(wordList.getOrDefault(findExplain, "Don't find word what you need :("));
-
         }
     }
 
