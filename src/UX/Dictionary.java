@@ -1,9 +1,12 @@
+package UX;
+
 import java.util.HashMap;
 
 public class Dictionary {
     private int numWord;
     private HashMap<String, String> wordList = new HashMap<>();
     private Trie trie = new Trie();
+
     public HashMap<String, String> getWordList() {
         return wordList;
     }

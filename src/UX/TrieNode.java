@@ -1,3 +1,5 @@
+package UX;
+
 public class TrieNode {
     public boolean isEndOfWord;
     TrieNode[] child = new TrieNode[26];

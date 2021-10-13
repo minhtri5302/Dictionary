@@ -1,3 +1,5 @@
+package UX;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -43,6 +45,34 @@ public class DictionaryManagement {
             HashMap<String, String> wordList = dictionary.getWordList();
             System.out.println(wordList.getOrDefault(findExplain, "Don't find word what you need :("));
         }
+    }
+
+    public String searchWord(String target) {
+        if (target.equals("")) return "Hãy nhập từ cần tìm";
+        if (!dictionary.getWordList().containsKey(target)) return "Không tìm thấy từ này trong từ điển";
+        HashMap<String, String> wordList = dictionary.getWordList();
+        return wordList.get(target);
+    }
+
+    public boolean addWord(String target, String explain) {
+        if (target.equals("") || explain.equals("") || dictionary.getWordList().containsKey(target)) return false;
+        dictionary.addWord(target, explain);
+        dictionaryExportToFile();
+        return true;
+    }
+
+    public boolean deleteWord(String target) {
+        if (target.equals("") || !dictionary.getWordList().containsKey(target)) return false;
+        dictionary.deleteWord(target);
+        dictionaryExportToFile();
+        return true;
+    }
+
+    public boolean editWord(String target, String explain) {
+        if (target.equals("") || explain.equals("") || !dictionary.getWordList().containsKey(target)) return false;
+        dictionary.editWord(target, explain);
+        dictionaryExportToFile();
+        return true;
     }
 
     public boolean userAddWord() {

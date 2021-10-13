@@ -1,3 +1,5 @@
+package UX;
+
 public class Word {
 
     private String word_target;

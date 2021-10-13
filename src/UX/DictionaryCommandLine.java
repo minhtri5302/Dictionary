@@ -1,7 +1,20 @@
+package UX;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 import java.util.HashMap;
 
-public class DictionaryCommandLine {
+
+public class DictionaryCommandLine extends Application {
     private DictionaryManagement dictionaryManagement = new DictionaryManagement();
+
+    public DictionaryManagement getDictionaryManagement() {
+        return dictionaryManagement;
+    }
 
     public void showAllWords() {
         Dictionary dictionary = dictionaryManagement.getDictionary();
@@ -21,17 +34,22 @@ public class DictionaryCommandLine {
     public void dictionaryAdvanced() {
         dictionaryManagement.insertFromFile();
         showAllWords();
-        dictionaryManagement.dictionaryLookup();
+//        dictionaryManagement.dictionaryLookup();
     }
 
     public static void main(String[] args) {
-        DictionaryCommandLine p = new DictionaryCommandLine();
-        p.dictionaryAdvanced();
-        while (true) {
-            p.dictionaryManagement.userAddWord();
-            p.dictionaryManagement.userDeleteWord();
-            p.dictionaryManagement.userEditWord();
-            p.dictionaryAdvanced();
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            Parent root = FXMLLoader.load(this.getClass().getResource("/UI/Menu.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
 }
