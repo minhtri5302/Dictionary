@@ -13,40 +13,26 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-public class AddWordController {
-    @FXML
-    private TextField wordTarget;
-    @FXML
-    private TextField wordExplain;
-    @FXML
-    private Label alert;
-    private DictionaryCommandLine dictionaryCommandLine;
+public class AddWordController extends Navigation {
 
-    public void setDictionaryCommandLine(DictionaryCommandLine dictionaryCommandLine) {
-        this.dictionaryCommandLine = dictionaryCommandLine;
-    }
+  @FXML
+  private TextField wordTarget;
+  @FXML
+  private TextField wordExplain;
+  @FXML
+  private Label alert;
 
-    public void submitAddWord(ActionEvent event) {
-        try {
-            String target = wordTarget.getText();
-            String explain = wordExplain.getText();
-            if (!dictionaryCommandLine.getDictionaryManagement().addWord(target, explain)) {
-                alert.setText("Từ điển đã có từ này");
-            }
-            dictionaryCommandLine.dictionaryAdvanced();
-        } catch (Exception ex) {
-        }
+  public void submitAddWord(ActionEvent event) {
+    try {
+      String target = wordTarget.getText();
+      String explain = wordExplain.getText();
+      if (!getDictionaryCommandLine().getDictionaryManagement().addWord(target, explain)) {
+        alert.setText("Từ điển đã có từ này");
+      } else {
+        alert.setText("Thêm vào từ điển thành công");
+      }
+      getDictionaryCommandLine().dictionaryAdvanced();
+    } catch (Exception ex) {
     }
-
-    public void addGoMenu(ActionEvent e) {
-        try {
-            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("Menu.fxml"));
-            Parent viewParent = loader.load();
-            Scene scene = new Scene(viewParent);
-            stage.setScene(scene);
-        } catch (Exception ex) {
-        }
-    }
+  }
 }

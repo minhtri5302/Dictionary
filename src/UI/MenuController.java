@@ -15,12 +15,10 @@ import java.util.ResourceBundle;
 public class MenuController implements Initializable {
     private DictionaryCommandLine dictionaryCommandLine;
 
-    public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("INITTTTt");
+    public void initialize(URL location, ResourceBundle resources){
         dictionaryCommandLine = new DictionaryCommandLine();
         dictionaryCommandLine.dictionaryAdvanced();
     }
-
     public void goSearchWord(ActionEvent e) {
         try {
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -28,6 +26,8 @@ public class MenuController implements Initializable {
             loader.setLocation(getClass().getResource("SearchWord.fxml"));
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
+            scene.getStylesheets().add
+                ("/UI/button.css");
             SearchWordController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             stage.setScene(scene);
@@ -42,6 +42,8 @@ public class MenuController implements Initializable {
             loader.setLocation(getClass().getResource("AddWord.fxml"));
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
+            scene.getStylesheets().add
+                ("/UI/button.css");
             AddWordController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             stage.setScene(scene);
@@ -56,6 +58,8 @@ public class MenuController implements Initializable {
             loader.setLocation(getClass().getResource("DeleteWord.fxml"));
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
+            scene.getStylesheets().add
+                ("/UI/button.css");
             DeleteWordController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             stage.setScene(scene);
@@ -70,6 +74,8 @@ public class MenuController implements Initializable {
             loader.setLocation(getClass().getResource("EditWord.fxml"));
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
+            scene.getStylesheets().add
+                ("/UI/button.css");
             EditWordController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             stage.setScene(scene);

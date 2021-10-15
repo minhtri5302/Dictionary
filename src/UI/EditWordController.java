@@ -17,39 +17,22 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class EditWordController {
+public class EditWordController extends Navigation{
     @FXML
     private TextField wordTarget;
     @FXML
     private TextField wordExplain;
     @FXML
     private Label alert;
-    private DictionaryCommandLine dictionaryCommandLine;
-
-    public void setDictionaryCommandLine(DictionaryCommandLine dictionaryCommandLine) {
-        this.dictionaryCommandLine = dictionaryCommandLine;
-    }
-
     public void submitEditWord(ActionEvent event) {
         try {
             String target = wordTarget.getText();
             String explain = wordExplain.getText();
-            if (!dictionaryCommandLine.getDictionaryManagement().editWord(target, explain)) {
+            if (!getDictionaryCommandLine().getDictionaryManagement().editWord(target, explain)) {
                 alert.setText("Từ này chưa có trong từ điển");
             }
-            dictionaryCommandLine.dictionaryAdvanced();
-        } catch (Exception ex) {
-        }
-    }
-
-    public void editGoMenu(ActionEvent e) {
-        try {
-            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("Menu.fxml"));
-            Parent viewParent = loader.load();
-            Scene scene = new Scene(viewParent);
-            stage.setScene(scene);
+            else alert.setText("Sửa từ thành công");
+            getDictionaryCommandLine().dictionaryAdvanced();
         } catch (Exception ex) {
         }
     }

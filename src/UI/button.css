@@ -1,0 +1,17 @@
+.button {
+  -fx-background-color: #7bc8ce;
+  -fx-text-fill: #494949;
+  /*-fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );*/
+  -fx-border-style: solid;
+  -fx-border-width: 0 0 10 0;
+  -fx-border-color: #494949;
+  -fx-border-radius: 0px;
+}
+.button:hover {
+  -fx-background-color: #f6b93b;
+  -fx-border-color: #f6b93b;
+  -fx-text-fill: #ffffff;
+}
+.root{
+  -fx-background:  #b7e1e4;
+}
