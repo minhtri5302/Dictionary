@@ -13,16 +13,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-public class DeleteWordController {
+public class DeleteWordController extends Navigation{
     @FXML
     private TextField wordDelete;
     @FXML
     private Label alert;
     private DictionaryCommandLine dictionaryCommandLine;
-
-    public void setDictionaryCommandLine(DictionaryCommandLine dictionaryCommandLine) {
-        this.dictionaryCommandLine = dictionaryCommandLine;
-    }
 
     public void submitDeleteWord(ActionEvent event) {
         try {
@@ -30,19 +26,8 @@ public class DeleteWordController {
             if (!dictionaryCommandLine.getDictionaryManagement().deleteWord(target)) {
                 alert.setText("Từ này chưa có trong từ điển");
             }
+            else alert.setText("Xoá từ thành công");
             dictionaryCommandLine.dictionaryAdvanced();
-        } catch (Exception ex) {
-        }
-    }
-
-    public void deleteGoMenu(ActionEvent e) {
-        try {
-            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("Menu.fxml"));
-            Parent viewParent = loader.load();
-            Scene scene = new Scene(viewParent);
-            stage.setScene(scene);
         } catch (Exception ex) {
         }
     }

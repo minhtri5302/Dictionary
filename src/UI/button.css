@@ -12,3 +12,6 @@
   -fx-border-color: #f6b93b;
   -fx-text-fill: #ffffff;
 }
+.root{
+  -fx-background:  #b7e1e4;
+}
