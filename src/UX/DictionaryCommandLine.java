@@ -1,5 +1,6 @@
 package UX;
 
+import UI.MenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -47,6 +48,8 @@ public class DictionaryCommandLine extends Application {
             Parent root = FXMLLoader.load(this.getClass().getResource("/UI/Menu.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
+            scene.getStylesheets().add
+                ("/UI/button.css");
             primaryStage.show();
         } catch (Exception e) {
             System.out.println(e);

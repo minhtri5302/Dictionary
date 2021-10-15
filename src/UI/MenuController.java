@@ -15,12 +15,10 @@ import java.util.ResourceBundle;
 public class MenuController implements Initializable {
     private DictionaryCommandLine dictionaryCommandLine;
 
-    public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("INITTTTt");
+    public void initialize(URL location, ResourceBundle resources){
         dictionaryCommandLine = new DictionaryCommandLine();
         dictionaryCommandLine.dictionaryAdvanced();
     }
-
     public void goSearchWord(ActionEvent e) {
         try {
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();

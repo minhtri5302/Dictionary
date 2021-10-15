@@ -1,5 +1,7 @@
 package UX;
 
+import java.util.ArrayList;
+
 public class Trie {
     private TrieNode root;
 
@@ -21,17 +23,25 @@ public class Trie {
         curNode.isEndOfWord = true;
     }
 
-    public boolean search(String s) {
-        TrieNode curNode = root;
-        for (int i = 0; i < s.length(); ++i) {
-            int index = s.charAt(i) - 'a';
-            if (curNode.child[index] == null)
-                return false;
-            curNode = curNode.child[index];
-        }
-        return curNode.isEndOfWord;
-    }
-
+//    public ArrayList<String> search(String s) {
+//        TrieNode curNode = root;
+//        for (int i = 0; i < s.length(); ++i) {
+//            int index = s.charAt(i) - 'a';
+//            if (curNode.child[index] == null)
+//                return false;
+//            curNode = curNode.child[index];
+//        }
+//        return curNode.isEndOfWord;
+//    }
+//    private ArrayList<String> dfsTrie(TrieNode node, String cur) {
+//        ArrayList<String> res = new ArrayList<>();
+//        if(node.isEndOfWord) {
+//            res.add(cur);
+//        }
+//        for(int i = 0; i < 26; i++){
+//
+//        }
+//    }
     public boolean isEmptyRoot(TrieNode curRoot) {
         for (int i = 0; i < 26; ++i) {
             if(curRoot.child[i] != null) {

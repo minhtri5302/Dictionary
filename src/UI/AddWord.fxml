@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="730.0" prefWidth="1021.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.AddWordController">
-   <center>
+   <right>
         <AnchorPane prefHeight="730.0" prefWidth="1069.0" BorderPane.alignment="CENTER">
             <children>
                 <Label layoutX="232.0" layoutY="220.0" prefHeight="70.0" prefWidth="192.0" text="Nhập từ cần thêm:">
@@ -34,7 +34,32 @@
                   <Font size="30.0" />
                </font>
             </Label>
+            <Button layoutX="852.0" mnemonicParsing="false" onAction="#goSearchWord" prefHeight="97.0" prefWidth="210.0" text="TÌM TỪ" textFill="#494949">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Button layoutX="642.0" mnemonicParsing="false" onAction="#goAddWord" prefHeight="97.0" prefWidth="210.0" text="THÊM TỪ" textFill="#494949">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Button layoutX="420.0" mnemonicParsing="false" onAction="#goEditWord" prefHeight="97.0" prefWidth="210.0" text="SỬA TỪ" textFill="#494949">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Button layoutX="210.0" mnemonicParsing="false" onAction="#goDeleteWord" prefHeight="97.0" prefWidth="210.0" text="XOÁ TỪ" textFill="#494949">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="97.0" prefWidth="210.0" text="GIỚI THIỆU" textFill="#494949">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
-   </center>
+   </right>
 </BorderPane>
