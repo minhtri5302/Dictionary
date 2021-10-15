@@ -8,7 +8,15 @@ public class DictionaryPronunciation {
         System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
         Voice voice = VoiceManager.getInstance().getVoice("kevin16");
         voice.allocate();
-        voice.speak(text);
+        try {
+            //voice.setRate(190); wpm. word per minute
+            //voice.setPitch(150);
+            //voice.setVolume(10);
+            voice.speak(text);
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
         voice.deallocate();
     }
 }
