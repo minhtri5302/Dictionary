@@ -1,7 +1,6 @@
 package UX;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class Trie {
     private TrieNode root;
@@ -28,8 +27,11 @@ public class Trie {
     public ArrayList<String> search(String s) {
         ArrayList<String> results = new ArrayList<String>();
         s = s.toLowerCase();
-        for (char c : s.toCharArray())
-            if (c < 'a' || c > 'z')  return results;
+        for (int i = 0; i < s.length(); ++i) {
+            if (s.charAt(i) < 'a' || s.charAt(i) > 'z') {
+                return results;
+            }
+        }
         TrieNode curNode = root;
         for (int i = 0; i < s.length(); ++i) {
             int index = s.charAt(i) - 'a';
@@ -42,7 +44,7 @@ public class Trie {
     }
 
     public void dfsTrie(TrieNode curNode, ArrayList<String> results, String prefix) {
-        if (curNode.isEndOfWord == true) results.add(prefix);
+        if (curNode.isEndOfWord) results.add(prefix);
 //        if(results.size() >= 15) return;
         for (int i = 0; i < 26; ++i) {
             if (curNode.child[i] != null) {
