@@ -1,7 +1,7 @@
 package UX;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Locale;
 
 public class Trie {
     private TrieNode root;
@@ -13,7 +13,8 @@ public class Trie {
     TrieNode getRoot() {
         return root;
     }
-    public void insert(String s){
+
+    public void insert(String s) {
         TrieNode curNode = root;
         for (int i = 0; i < s.length(); ++i) {
             int index = s.charAt(i) - 'a';
@@ -26,6 +27,9 @@ public class Trie {
 
     public ArrayList<String> search(String s) {
         ArrayList<String> results = new ArrayList<String>();
+        s = s.toLowerCase();
+        for (char c : s.toCharArray())
+            if (c < 'a' || c > 'z')  return results;
         TrieNode curNode = root;
         for (int i = 0; i < s.length(); ++i) {
             int index = s.charAt(i) - 'a';
@@ -36,34 +40,35 @@ public class Trie {
         dfsTrie(curNode, results, s);
         return results;
     }
+
     public void dfsTrie(TrieNode curNode, ArrayList<String> results, String prefix) {
-        if(curNode.isEndOfWord == true) results.add(prefix);
-        if(results.size() >= 15) return;
-        for(int i = 0; i < 26; ++i) {
-            if(curNode.child[i] != null) {
-                dfsTrie(curNode.child[i], results, prefix + (char)(i+(int) 'a') );
+        if (curNode.isEndOfWord == true) results.add(prefix);
+//        if(results.size() >= 15) return;
+        for (int i = 0; i < 26; ++i) {
+            if (curNode.child[i] != null) {
+                dfsTrie(curNode.child[i], results, prefix + (char) (i + (int) 'a'));
             }
         }
     }
 
     public boolean isEmptyRoot(TrieNode curRoot) {
         for (int i = 0; i < 26; ++i) {
-            if(curRoot.child[i] != null) {
+            if (curRoot.child[i] != null) {
                 return false;
             }
         }
         return true;
     }
 
-    public TrieNode delete(TrieNode curRoot , String s, int depth) {
-        if(curRoot == null) {
+    public TrieNode delete(TrieNode curRoot, String s, int depth) {
+        if (curRoot == null) {
             return null;
         }
-        if(depth == s.length()) {
+        if (depth == s.length()) {
             if (curRoot.isEndOfWord) {
                 curRoot.isEndOfWord = false;
             }
-            if(isEmptyRoot(curRoot)) {
+            if (isEmptyRoot(curRoot)) {
                 curRoot = null;
             }
             return curRoot;
@@ -71,7 +76,7 @@ public class Trie {
 
         int index = s.charAt(depth) - 'a';
         curRoot.child[index] = delete(curRoot.child[index], s, depth + 1);
-        if (isEmptyRoot(curRoot) && !curRoot.isEndOfWord){
+        if (isEmptyRoot(curRoot) && !curRoot.isEndOfWord) {
             curRoot = null;
         }
         return curRoot;

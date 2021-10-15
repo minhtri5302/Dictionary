@@ -27,7 +27,7 @@ public class MenuController implements Initializable {
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             scene.getStylesheets().add
-                ("/UI/button.css");
+                ("/UI/navigation-button.css");
             SearchWordController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             stage.setScene(scene);
@@ -43,7 +43,7 @@ public class MenuController implements Initializable {
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             scene.getStylesheets().add
-                ("/UI/button.css");
+                ("/UI/navigation-button.css");
             AddWordController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             stage.setScene(scene);
@@ -59,7 +59,7 @@ public class MenuController implements Initializable {
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             scene.getStylesheets().add
-                ("/UI/button.css");
+                ("/UI/navigation-button.css");
             DeleteWordController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             stage.setScene(scene);
@@ -75,7 +75,7 @@ public class MenuController implements Initializable {
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             scene.getStylesheets().add
-                ("/UI/button.css");
+                ("/UI/navigation-button.css");
             EditWordController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             stage.setScene(scene);
