@@ -3,14 +3,19 @@ package UI;
 import UX.DictionaryCommandLine;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Navigation {
-  private DictionaryCommandLine dictionaryCommandLine;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+public class Navigation implements Initializable {
+  private DictionaryCommandLine dictionaryCommandLine;
+  public void initialize(URL location, ResourceBundle resources){
+  }
   public void setDictionaryCommandLine(DictionaryCommandLine dictionaryCommandLine) {
     this.dictionaryCommandLine = dictionaryCommandLine;
   }
@@ -25,7 +30,7 @@ public class Navigation {
       Parent viewParent = loader.load();
       Scene scene = new Scene(viewParent);
       scene.getStylesheets().add
-          ("/UI/button.css");
+          ("/UI/navigation-button.css");
       SearchWordController controller = loader.getController();
       controller.setDictionaryCommandLine(dictionaryCommandLine);
       stage.setScene(scene);
@@ -41,7 +46,7 @@ public class Navigation {
       Parent viewParent = loader.load();
       Scene scene = new Scene(viewParent);
       scene.getStylesheets().add
-          ("/UI/button.css");
+          ("/UI/navigation-button.css");
       AddWordController controller = loader.getController();
       controller.setDictionaryCommandLine(dictionaryCommandLine);
       stage.setScene(scene);
@@ -57,7 +62,7 @@ public class Navigation {
       Parent viewParent = loader.load();
       Scene scene = new Scene(viewParent);
       scene.getStylesheets().add
-          ("/UI/button.css");
+          ("/UI/navigation-button.css");
       DeleteWordController controller = loader.getController();
       controller.setDictionaryCommandLine(dictionaryCommandLine);
       stage.setScene(scene);
@@ -73,7 +78,7 @@ public class Navigation {
       Parent viewParent = loader.load();
       Scene scene = new Scene(viewParent);
       scene.getStylesheets().add
-          ("/UI/button.css");
+          ("/UI/navigation-button.css");
       EditWordController controller = loader.getController();
       controller.setDictionaryCommandLine(dictionaryCommandLine);
       stage.setScene(scene);
@@ -88,7 +93,7 @@ public class Navigation {
       Parent viewParent = loader.load();
       Scene scene = new Scene(viewParent);
       scene.getStylesheets().add
-          ("/UI/button.css");
+          ("/UI/navigation-button.css");
       stage.setScene(scene);
     } catch (Exception ex) {
     }

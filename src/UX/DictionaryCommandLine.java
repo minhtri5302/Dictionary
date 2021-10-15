@@ -1,6 +1,5 @@
 package UX;
 
-import UI.MenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,18 +26,14 @@ public class DictionaryCommandLine extends Application {
         }
     }
 
-    public void dictionaryBasic() {
-        dictionaryManagement.insertFromCommandline();
-        showAllWords();
-    }
-
     public void dictionaryAdvanced() {
         dictionaryManagement.insertFromFile();
         showAllWords();
-//        dictionaryManagement.dictionaryLookup();
     }
 
     public static void main(String[] args) {
+        DictionaryPronunciation x = new DictionaryPronunciation();
+//        x.textToSpeech("The time is now");
         launch(args);
     }
 
@@ -49,7 +44,7 @@ public class DictionaryCommandLine extends Application {
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             scene.getStylesheets().add
-                ("/UI/button.css");
+                ("/UI/navigation-button.css");
             primaryStage.show();
         } catch (Exception e) {
             System.out.println(e);

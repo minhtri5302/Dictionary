@@ -3,14 +3,13 @@ package UX;
 import java.util.HashMap;
 
 public class Dictionary {
-    private int numWord;
     private HashMap<String, String> wordList = new HashMap<>();
     private Trie trie = new Trie();
 
     public HashMap<String, String> getWordList() {
         return wordList;
     }
-
+    public Trie getTrie() {return trie;}
     public void addWord(String target, String explain) {
         target = target.toLowerCase();
         wordList.put(target, explain);

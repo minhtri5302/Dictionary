@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="730.0" prefWidth="1021.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.AddWordController">
+<BorderPane prefHeight="730.0" prefWidth="1021.0" stylesheets="@root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.AddWordController">
    <top>
         <AnchorPane prefHeight="730.0" prefWidth="1069.0" BorderPane.alignment="CENTER">
             <children>
@@ -34,7 +34,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Group>
+            <Group stylesheets="@navigation-button.css">
                <children>
                   <Button mnemonicParsing="false" onAction="#goMenu" prefHeight="97.0" prefWidth="210.0" text="GIỚI THIỆU" textFill="#494949">
                      <font>
@@ -46,7 +46,7 @@
                         <Font size="32.0" />
                      </font>
                   </Button>
-                  <Button layoutX="422.0" mnemonicParsing="false" onAction="#goAddWord" prefHeight="97.0" prefWidth="210.0" text="THÊM TỪ" textFill="#494949">
+                  <Button layoutX="422.0" mnemonicParsing="false" onAction="#goAddWord" prefHeight="97.0" prefWidth="210.0" style="-fx-border-width: 0 0 18 0;" text="THÊM TỪ" textFill="#494949">
                      <font>
                         <Font size="32.0" />
                      </font>
