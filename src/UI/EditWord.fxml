@@ -4,11 +4,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="730.0" prefWidth="1021.0" stylesheets="@root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.EditWordController">
+<BorderPane prefHeight="900.0" prefWidth="1021.0" stylesheets="@root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.EditWordController">
     <center>
         <AnchorPane prefHeight="730.0" prefWidth="1069.0" BorderPane.alignment="CENTER">
             <children>
@@ -56,13 +58,18 @@
                         <Font size="32.0" />
                      </font>
                   </Button>
-                  <Button layoutX="844.0" mnemonicParsing="false" onAction="#goDeleteWord" prefHeight="97.0" prefWidth="210.0" text="XOÁ TỪ" textFill="#494949">
+                  <Button layoutX="844.0" mnemonicParsing="false" onAction="#goTranslate" prefHeight="97.0" prefWidth="210.0" text="VĂN BẢN" textFill="#494949">
                      <font>
                         <Font size="32.0" />
                      </font>
                   </Button>
                </children>
             </Group>
+            <ImageView fitHeight="74.0" fitWidth="76.0" layoutX="14.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@dictionary-icon.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
     </center>

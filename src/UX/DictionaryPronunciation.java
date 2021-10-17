@@ -19,8 +19,4 @@ public class DictionaryPronunciation {
         }
         voice.deallocate();
     }
-    public static void main(String[] args) {
-        DictionaryPronunciation DP = new DictionaryPronunciation();
-        DP.textToSpeech("Fuck");
-    }
 }

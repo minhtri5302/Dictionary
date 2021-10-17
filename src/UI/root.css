@@ -1,4 +1,8 @@
-.root{
-    -fx-background:  #b7e1e4;
-    -fx-font-family: 'Roboto',sans-serif;
+.root {
+    -fx-background: #b7e1e4;
+    -fx-font-family: 'Roboto', sans-serif;
+}
+
+.text-area .content {
+    -fx-background-color: transparent, white, transparent, white;
 }

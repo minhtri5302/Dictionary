@@ -9,71 +9,93 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="730.0" prefWidth="1021.0" stylesheets="@root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.SearchWordController">
-   <left>
-      <AnchorPane prefHeight="606.0" prefWidth="440.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="14.0" layoutY="14.0" prefHeight="67.0" prefWidth="344.0" text="Nhập từ cần tìm:">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Label>
-            <TextField fx:id="wordSearch" layoutX="208.0" layoutY="22.0" prefHeight="52.0" prefWidth="195.0" />
-            <ListView fx:id="listView" layoutX="25.0" layoutY="107.0" prefHeight="456.0" prefWidth="391.0" stylesheets="@list-button.css" />
-         </children>
-      </AnchorPane>
-   </left>
-   <right>
-      <AnchorPane prefHeight="631.0" prefWidth="597.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="explain" layoutX="79.0" layoutY="134.0" prefHeight="189.0" prefWidth="523.0">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="65.0" fitWidth="63.0" layoutX="498.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@sound-button.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </right>
-   <top>
-      <AnchorPane prefHeight="99.0" prefWidth="1071.0" BorderPane.alignment="CENTER">
-         <children>
-            <Group stylesheets="@navigation-button.css">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#goMenu" prefHeight="97.0" prefWidth="210.0" text="GIỚI THIỆU" textFill="#494949">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="211.0" mnemonicParsing="false" onAction="#goSearchWord" prefHeight="97.0" prefWidth="210.0" style="-fx-border-width: 0 0 18 0;" text="TÌM TỪ" textFill="#494949">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="422.0" mnemonicParsing="false" onAction="#goAddWord" prefHeight="97.0" prefWidth="210.0" text="THÊM TỪ" textFill="#494949">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="633.0" mnemonicParsing="false" onAction="#goEditWord" prefHeight="97.0" prefWidth="210.0" text="SỬA TỪ" textFill="#494949">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="844.0" mnemonicParsing="false" onAction="#goDeleteWord" prefHeight="97.0" prefWidth="210.0" text="XOÁ TỪ" textFill="#494949">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </Button>
-               </children>
-            </Group>
-         </children>
-      </AnchorPane>
-   </top>
+<BorderPane prefHeight="900.0" prefWidth="1021.0" stylesheets="@root.css" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.SearchWordController">
+    <left>
+        <AnchorPane prefHeight="606.0" prefWidth="440.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="wordSearch" layoutX="104.0" layoutY="19.0" prefHeight="59.0" prefWidth="292.0"
+                           promptText="Nhập từ cần tìm" style="-fx-background-radius: 15px; -fx-font-size: 20;"/>
+                <ImageView fitHeight="74.0" fitWidth="76.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@dictionary-icon.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="352.0" layoutY="26.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@search.png"/>
+                    </image>
+                </ImageView>
+                <Pane layoutX="14.0" layoutY="97.0" prefHeight="692.0" prefWidth="406.0"
+                      style="-fx-background-color: white; -fx-background-radius: 15px;">
+                    <children>
+                        <ListView fx:id="listView" layoutX="7.0" layoutY="10.0" prefHeight="672.0" prefWidth="388.0"
+                                  style="-fx-border-color: white;" stylesheets="@list-button.css"/>
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="631.0" prefWidth="597.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="explain" layoutX="79.0" layoutY="134.0" prefHeight="189.0" prefWidth="523.0">
+                    <font>
+                        <Font size="30.0"/>
+                    </font>
+                </Label>
+                <ImageView fitHeight="65.0" fitWidth="63.0" layoutX="498.0" layoutY="21.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@sound-button.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </right>
+    <top>
+        <AnchorPane prefHeight="99.0" prefWidth="1071.0" BorderPane.alignment="CENTER">
+            <children>
+                <Group stylesheets="@navigation-button.css">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#goMenu" prefHeight="97.0" prefWidth="210.0"
+                                text="GIỚI THIỆU" textFill="#494949">
+                            <font>
+                                <Font size="32.0"/>
+                            </font>
+                        </Button>
+                        <Button layoutX="211.0" mnemonicParsing="false" onAction="#goSearchWord" prefHeight="97.0"
+                                prefWidth="210.0" style="-fx-border-width: 0 0 18 0;" text="TÌM TỪ" textFill="#494949">
+                            <font>
+                                <Font size="32.0"/>
+                            </font>
+                        </Button>
+                        <Button layoutX="422.0" mnemonicParsing="false" onAction="#goAddWord" prefHeight="97.0"
+                                prefWidth="210.0" text="THÊM TỪ" textFill="#494949">
+                            <font>
+                                <Font size="32.0"/>
+                            </font>
+                        </Button>
+                        <Button layoutX="633.0" mnemonicParsing="false" onAction="#goEditWord" prefHeight="97.0"
+                                prefWidth="210.0" text="SỬA TỪ" textFill="#494949">
+                            <font>
+                                <Font size="32.0"/>
+                            </font>
+                        </Button>
+                        <Button layoutX="844.0" mnemonicParsing="false" onAction="#goTranslate" prefHeight="97.0"
+                                prefWidth="210.0" text="VĂN BẢN" textFill="#494949">
+                            <font>
+                                <Font size="32.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </Group>
+            </children>
+        </AnchorPane>
+    </top>
 </BorderPane>

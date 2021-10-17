@@ -27,11 +27,8 @@ public class Trie {
     public ArrayList<String> search(String s) {
         ArrayList<String> results = new ArrayList<String>();
         s = s.toLowerCase();
-        for (int i = 0; i < s.length(); ++i) {
-            if (s.charAt(i) < 'a' || s.charAt(i) > 'z') {
-                return results;
-            }
-        }
+        for (char c : s.toCharArray())
+            if (c < 'a' || c > 'z')  return results;
         TrieNode curNode = root;
         for (int i = 0; i < s.length(); ++i) {
             int index = s.charAt(i) - 'a';
