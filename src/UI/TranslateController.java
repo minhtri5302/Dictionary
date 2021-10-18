@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -56,17 +57,6 @@ public class TranslateController extends Navigation {
         return response.toString();
     }
 
-    //    public void submitDeleteWord(ActionEvent event) {
-//        try {
-//            String target = wordDelete.getText();
-//            if (!dictionaryCommandLine.getDictionaryManagement().deleteWord(target)) {
-//                alert.setText("Từ này chưa có trong từ điển");
-//            }
-//            else alert.setText("Xoá từ thành công");
-//            dictionaryCommandLine.dictionaryAdvanced();
-//        } catch (Exception ex) {
-//        }
-//    }
     public void submitTranslate(ActionEvent event) {
         try {
             String target = input.getText();

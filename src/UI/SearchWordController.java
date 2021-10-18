@@ -3,31 +3,68 @@ package UI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
 import UX.DictionaryCommandLine;
+import UX.DictionaryPronunciation;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 public class SearchWordController extends Navigation {
     @FXML
     private TextField wordSearch;
     @FXML
-    private ListView<Button> listView;
+    private TextArea wordExplain;
+    @FXML
+    private ListView<String> listView;
+    @FXML
+    private Label wordTop;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         wordSearch.textProperty().addListener((observable, oldValue, newValue) -> {
             listView.getItems().clear();
             DictionaryCommandLine x = getDictionaryCommandLine();
-            ArrayList<String> arrayList = getDictionaryCommandLine().getDictionaryManagement().getDictionary().getTrie().search(wordSearch.getText());
-            System.out.println(arrayList.size());
+            ArrayList<String> arrayList = getDictionaryCommandLine().getDictionaryManagement().getDictionary().getTrie().search(wordSearch.getText().trim());
             for (String s : arrayList) {
-                System.out.println(s);
-                Button button = new Button();
-                button.setText(s);
-                listView.getItems().add(button);
+                listView.getItems().add(s);
             }
         });
+    }
+
+    @FXML
+    public void submitListView(MouseEvent event) {
+        if (listView.getSelectionModel().getSelectedItem() != null) {
+            String target = listView.getSelectionModel().getSelectedItem();
+            wordExplain.setText(getDictionaryCommandLine().getDictionaryManagement().searchWord(target));
+            wordTop.setText(target);
+        }
+    }
+
+    public void submitSearch(ActionEvent event) {
+        String target = wordSearch.getText();
+        target = target.trim();
+        String explain = getDictionaryCommandLine().getDictionaryManagement().searchWord(target);
+        wordExplain.setText(explain);
+        wordTop.setText(target);
+    }
+
+    public void submitEnter(KeyEvent e) {
+        if (e.getCode() == KeyCode.ENTER) {
+            String target = wordSearch.getText();
+            target = target.trim();
+            String explain = getDictionaryCommandLine().getDictionaryManagement().searchWord(target);
+            wordExplain.setText(explain);
+            wordTop.setText(target);
+        }
+    }
+
+    public void submitSound(ActionEvent event) {
+        String target = wordTop.getText();
+        DictionaryPronunciation DP = new DictionaryPronunciation();
+        DP.textToSpeech(target);
     }
 }

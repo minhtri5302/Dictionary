@@ -26,12 +26,12 @@
                                 <Font size="32.0" />
                             </font>
                         </Button>
-                        <Button layoutX="422.0" mnemonicParsing="false" onAction="#goAddWord" prefHeight="97.0" prefWidth="210.0" text="THÊM TỪ" textFill="#494949">
+                        <Button layoutX="422.0" mnemonicParsing="false" onAction="#goAddWord" prefHeight="97.0" prefWidth="210.0" text="THÊM/SỬA" textFill="#494949">
                             <font>
                                 <Font size="32.0" />
                             </font>
                         </Button>
-                        <Button layoutX="633.0" mnemonicParsing="false" onAction="#goEditWord" prefHeight="97.0" prefWidth="210.0" text="SỬA TỪ" textFill="#494949">
+                        <Button layoutX="633.0" mnemonicParsing="false" onAction="#goEditWord" prefHeight="97.0" prefWidth="210.0" text="XOÁ TỪ" textFill="#494949">
                             <font>
                                 <Font size="32.0" />
                             </font>

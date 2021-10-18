@@ -1,12 +1,14 @@
 package UX;
 
+import java.util.Map;
+
 public class TrieNode {
     public boolean isEndOfWord;
-    TrieNode[] child = new TrieNode[26];
+    TrieNode[] child = new TrieNode[257];
 
     TrieNode() {
         isEndOfWord = false;
-        for (int i = 0; i < 26; ++i)
+        for (int i = 0; i < 257; ++i)
             child[i] = null;
     }
 }

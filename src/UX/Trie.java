@@ -13,10 +13,20 @@ public class Trie {
         return root;
     }
 
+    int convertIndex(char c) {
+        if (c == 'ə' ) return 256;
+        return (int) c;
+    }
+
+    char convertChar(int id) {
+        if (id == 256) return 'ə';
+        return (char) (id);
+    }
+
     public void insert(String s) {
         TrieNode curNode = root;
         for (int i = 0; i < s.length(); ++i) {
-            int index = s.charAt(i) - 'a';
+            int index = convertIndex(s.charAt(i));
             if (curNode.child[index] == null)
                 curNode.child[index] = new TrieNode();
             curNode = curNode.child[index];
@@ -28,10 +38,12 @@ public class Trie {
         ArrayList<String> results = new ArrayList<String>();
         s = s.toLowerCase();
         for (char c : s.toCharArray())
-            if (c < 'a' || c > 'z')  return results;
+            if (c != 'ə' && ((int) c < 0 || (int) c > 255)) {
+                return results;
+            }
         TrieNode curNode = root;
         for (int i = 0; i < s.length(); ++i) {
-            int index = s.charAt(i) - 'a';
+            int index = convertIndex(s.charAt(i));
             if (curNode.child[index] == null)
                 return results;
             curNode = curNode.child[index];
@@ -42,16 +54,17 @@ public class Trie {
 
     public void dfsTrie(TrieNode curNode, ArrayList<String> results, String prefix) {
         if (curNode.isEndOfWord) results.add(prefix);
-//        if(results.size() >= 15) return;
-        for (int i = 0; i < 26; ++i) {
+        if (results.size() >= 100) return;
+        for (int i = 0; i < 257; ++i) {
             if (curNode.child[i] != null) {
-                dfsTrie(curNode.child[i], results, prefix + (char) (i + (int) 'a'));
+                char add = convertChar(i);
+                dfsTrie(curNode.child[i], results, prefix + add);
             }
         }
     }
 
     public boolean isEmptyRoot(TrieNode curRoot) {
-        for (int i = 0; i < 26; ++i) {
+        for (int i = 0; i < 257; ++i) {
             if (curRoot.child[i] != null) {
                 return false;
             }
@@ -73,7 +86,7 @@ public class Trie {
             return curRoot;
         }
 
-        int index = s.charAt(depth) - 'a';
+        int index = convertIndex(s.charAt(depth));
         curRoot.child[index] = delete(curRoot.child[index], s, depth + 1);
         if (isEmptyRoot(curRoot) && !curRoot.isEndOfWord) {
             curRoot = null;

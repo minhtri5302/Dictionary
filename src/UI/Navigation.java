@@ -46,12 +46,12 @@ public class Navigation implements Initializable {
         try {
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("AddWord.fxml"));
+            loader.setLocation(getClass().getResource("AddEditWord.fxml"));
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             scene.getStylesheets().add
                     ("/UI/navigation-button.css");
-            AddWordController controller = loader.getController();
+            AddEditWordController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             stage.setScene(scene);
         } catch (Exception ex) {
@@ -78,12 +78,12 @@ public class Navigation implements Initializable {
         try {
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("EditWord.fxml"));
+            loader.setLocation(getClass().getResource("DeleteWord.fxml"));
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             scene.getStylesheets().add
                     ("/UI/navigation-button.css");
-            EditWordController controller = loader.getController();
+            DeleteWordController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             stage.setScene(scene);
         } catch (Exception ex) {
@@ -94,10 +94,10 @@ public class Navigation implements Initializable {
         try {
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("Menu.fxml"));
+            loader.setLocation(getClass().getResource("Intro.fxml"));
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
-            MenuController controller = loader.getController();
+            IntroController controller = loader.getController();
             controller.setDictionaryCommandLine(dictionaryCommandLine);
             scene.getStylesheets().add
                     ("/UI/navigation-button.css");

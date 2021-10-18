@@ -12,18 +12,21 @@ public class Dictionary {
     public Trie getTrie() {return trie;}
     public void addWord(String target, String explain) {
         target = target.toLowerCase();
+        target = target.trim();
         wordList.put(target, explain);
         trie.insert(target);
     }
 
     public void deleteWord(String target) {
         target = target.toLowerCase();
+        target = target.trim();
         wordList.remove(target);
         trie.delete(trie.getRoot(), target, 0);
     }
 
     public void editWord(String target, String explain) {
         target = target.toLowerCase();
+        target = target.trim();
         wordList.replace(target, explain);
     }
 }
