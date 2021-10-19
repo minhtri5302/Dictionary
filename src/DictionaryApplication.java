@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class DictionaryApplication extends Application {
             scene.getStylesheets().add
                     ("/UI/css/navigation-button.css");
             primaryStage.setTitle("Dictionary OOP");
+            primaryStage.getIcons().add(new Image("/image/dictionary-icon.png"));
             primaryStage.show();
         } catch (Exception e) {
             System.out.println(e);
