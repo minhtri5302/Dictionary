@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="900.0" prefWidth="1021.0" stylesheets="@root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.SearchWordController">
+<BorderPane prefHeight="900.0" prefWidth="1021.0" stylesheets="@css/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.SearchWordController">
     <left>
-        <AnchorPane prefHeight="606.0" prefWidth="440.0" stylesheets="@root.css" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="606.0" prefWidth="440.0" stylesheets="@css/root.css" BorderPane.alignment="CENTER">
             <children>
                 <TextField fx:id="wordSearch" layoutX="104.0" layoutY="19.0" onKeyPressed="#submitEnter" prefHeight="59.0" prefWidth="292.0" promptText="Nhập từ cần tìm" style="-fx-background-radius: 15px; -fx-font-size: 20;" />
                 <ImageView fitHeight="74.0" fitWidth="76.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
@@ -25,7 +25,7 @@
                 </ImageView>
                 <Pane layoutX="14.0" layoutY="97.0" prefHeight="692.0" prefWidth="406.0" style="-fx-background-color: white; -fx-background-radius: 15px;">
                     <children>
-                        <ListView fx:id="listView" layoutX="7.0" layoutY="10.0" onMouseClicked="#submitListView" prefHeight="672.0" prefWidth="388.0" style="-fx-border-color: white; -fx-font-size: 20;" stylesheets="@list-button.css" />
+                        <ListView fx:id="listView" layoutX="7.0" layoutY="10.0" onMouseClicked="#submitListView" prefHeight="672.0" prefWidth="388.0" style="-fx-border-color: white; -fx-font-size: 20;" stylesheets="@css/list-button.css" />
                     </children>
                 </Pane>
             <Button ellipsisString="" layoutX="334.0" layoutY="26.0" mnemonicParsing="false" onAction="#submitSearch" prefHeight="46.0" prefWidth="50.0" style="-fx-background-color: white; -fx-background-radius: 50px; -fx-border-width: 0;" text="Button">
@@ -49,7 +49,7 @@
                   <Label fx:id="wordTop" layoutX="9.0" layoutY="9.0" prefHeight="58.0" prefWidth="533.0" style="-fx-font-size: 30;" />
                </children>
             </Pane>
-            <Button layoutX="506.0" layoutY="24.0" mnemonicParsing="false" onAction="#submitSound" prefHeight="60.0" prefWidth="57.0" stylesheets="@list-button.css">
+            <Button layoutX="506.0" layoutY="24.0" mnemonicParsing="false" onAction="#submitSound" prefHeight="60.0" prefWidth="57.0" stylesheets="@css/list-button.css">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="33.0" onDragDetected="#submitSound" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -64,7 +64,7 @@
     <top>
         <AnchorPane prefHeight="99.0" prefWidth="1071.0" BorderPane.alignment="CENTER">
             <children>
-                <Group stylesheets="@navigation-button.css">
+                <Group stylesheets="@css/navigation-button.css">
                     <children>
                         <Button mnemonicParsing="false" onAction="#goMenu" prefHeight="97.0" prefWidth="210.0" text="GIỚI THIỆU" textFill="#494949">
                             <font>

@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="900.0" prefWidth="1021.0" stylesheets="@root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.TranslateController">
+<BorderPane prefHeight="900.0" prefWidth="1021.0" stylesheets="@css/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.TranslateController">
     <top>
         <AnchorPane prefHeight="730.0" prefWidth="1069.0" BorderPane.alignment="CENTER">
             <children>
-                <Group stylesheets="@navigation-button.css">
+                <Group stylesheets ="@css/navigation-button.css">
                     <children>
                         <Button mnemonicParsing="false" onAction="#goMenu" prefHeight="97.0" prefWidth="210.0" text="GIỚI THIỆU" textFill="#494949">
                             <font>
@@ -43,7 +43,7 @@
                         </Button>
                     </children>
                 </Group>
-                <Group layoutX="-6.0" layoutY="111.0" stylesheets="@list-button.css">
+                <Group layoutX="-6.0" layoutY="111.0" stylesheets="@css/list-button.css">
                     <children>
                         <Button fx:id="button1" layoutX="158.0" layoutY="14.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="58.0" prefWidth="114.0" style="-fx-background-radius: 0;" text="Anh" />
                         <Button fx:id="button2" layoutX="272.0" layoutY="14.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="58.0" prefWidth="114.0" style="-fx-background-radius: 0;" text="Việt" />
@@ -52,7 +52,7 @@
                         <Button fx:id="button4" layoutX="794.0" layoutY="14.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="58.0" prefWidth="114.0" style="-fx-background-radius: 0;" text="Anh" />
                     </children>
                 </Group>
-                <Button layoutX="35.0" layoutY="187.0" mnemonicParsing="false" onAction="#submitSound1" prefHeight="60.0" prefWidth="57.0" stylesheets="@list-button.css">
+                <Button layoutX="35.0" layoutY="187.0" mnemonicParsing="false" onAction="#submitSound1" prefHeight="60.0" prefWidth="57.0" stylesheets="@css/list-button.css">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="33.0" onDragDetected="#submitSound1" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -61,7 +61,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="956.0" layoutY="187.0" mnemonicParsing="false" onAction="#submitSound2" prefHeight="60.0" prefWidth="57.0" stylesheets="@list-button.css">
+                <Button layoutX="956.0" layoutY="187.0" mnemonicParsing="false" onAction="#submitSound2" prefHeight="60.0" prefWidth="57.0" stylesheets="@css/list-button.css">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="33.0" onDragDetected="#submitSound1" pickOnBounds="true" preserveRatio="true">
                             <image>
