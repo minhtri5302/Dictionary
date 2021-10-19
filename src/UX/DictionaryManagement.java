@@ -44,18 +44,21 @@ public class DictionaryManagement {
     public boolean addWord(String target, String explain) {
         if (target.equals("") || explain.equals("") || dictionary.getWordList().containsKey(target)) return false;
         dictionary.addWord(target, explain);
+        dictionaryExportToFile();
         return true;
     }
 
     public boolean deleteWord(String target) {
         if (target.equals("") || !dictionary.getWordList().containsKey(target)) return false;
         dictionary.deleteWord(target);
+        dictionaryExportToFile();
         return true;
     }
 
     public boolean editWord(String target, String explain) {
         if (target.equals("") || explain.equals("") || !dictionary.getWordList().containsKey(target)) return false;
         dictionary.editWord(target, explain);
+        dictionaryExportToFile();
         return true;
     }
 
@@ -64,7 +67,11 @@ public class DictionaryManagement {
             FileWriter fileWriter = new FileWriter("dictionaries.txt");
             HashMap<String, String> wordList = dictionary.getWordList();
             for (String s : wordList.keySet()) {
-                fileWriter.write(s + " " + wordList.get(s) + "\n");
+                String explain = wordList.get(s);
+                String[] outStr = explain.split("\n");
+                String result = s + "#";
+                for(String tmp: outStr) result += tmp + "#";
+                fileWriter.write(result + "\n");
             }
             fileWriter.close();
         } catch (IOException ex) {

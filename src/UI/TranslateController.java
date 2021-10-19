@@ -36,7 +36,6 @@ public class TranslateController extends Navigation {
     }
 
 
-
     public void submitTranslate(ActionEvent event) {
         try {
             String target = input.getText();

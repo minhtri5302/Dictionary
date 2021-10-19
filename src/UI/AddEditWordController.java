@@ -31,9 +31,9 @@ public class AddEditWordController extends Navigation {
                 return;
             }
             alert.setTextFill(Color.web("red"));
-            if(!wordType.getText().equals("")) explain += "\n\t" + wordType.getText() + ":\n";
-            add = add.replace("\n", "\n\t\t-");
-            explain += "\t\t-" + add;
+            if(!wordType.getText().equals("")) explain += "\n   " + wordType.getText() + ":\n";
+            add = add.replace("\n", "\n      - ");
+            explain += "      - " + add;
             if (!getDictionaryManagement().addWord(target, explain)) {
                 alert.setText("Từ điển đã có từ này");
             } else {
@@ -55,9 +55,9 @@ public class AddEditWordController extends Navigation {
                 return;
             }
             alert.setTextFill(Color.web("red"));
-            if (!wordType.getText().equals("")) explain += "\n\t" + wordType.getText() + ":\n";
-            add = add.replace("\n", "\n\t\t-");
-            explain += "\t\t-" + add;
+            if (!wordType.getText().equals("")) explain += "\n   " + wordType.getText() + ":\n";
+            add = add.replace("\n", "\n      - ");
+            explain += "      - " + add;
             if (!getDictionaryManagement().editWord(target, explain)) {
                 alert.setText("Từ điển chưa có từ này");
             } else {

@@ -3,8 +3,6 @@ package UI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
-import UX.DictionaryManagement;
 import UX.DictionaryPronunciation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,7 +25,6 @@ public class SearchWordController extends Navigation {
     public void initialize(URL location, ResourceBundle resources) {
         wordSearch.textProperty().addListener((observable, oldValue, newValue) -> {
             listView.getItems().clear();
-            DictionaryManagement x = getDictionaryManagement();
             ArrayList<String> arrayList = getDictionaryManagement().getDictionary().getTrie().search(wordSearch.getText().trim());
             for (String s : arrayList) {
                 listView.getItems().add(s);
