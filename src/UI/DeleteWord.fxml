@@ -50,7 +50,7 @@
             </Group>
             <ImageView fitHeight="74.0" fitWidth="76.0" layoutX="14.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@dictionary-icon.png" />
+                  <Image url="/image/dictionary-icon.png" />
                </image>
             </ImageView>
             <TextField fx:id="wordTarget" layoutX="382.0" layoutY="388.0" prefHeight="65.0" prefWidth="379.0" promptText="hello" style="-fx-background-radius: 15; -fx-font-size: 25;" />

@@ -24,7 +24,7 @@ public class DeleteWordController extends Navigation{
                 return;
             }
             alert.setTextFill(Color.web("red"));
-            if (!getDictionaryCommandLine().getDictionaryManagement().deleteWord(target)) {
+            if (!getDictionaryManagement().deleteWord(target)) {
                 alert.setText("Từ điển chưa có từ này");
             } else {
                 alert.setTextFill(Color.web("#006400"));

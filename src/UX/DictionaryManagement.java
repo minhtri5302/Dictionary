@@ -1,11 +1,6 @@
 package UX;
 
 import java.io.*;
-import java.lang.reflect.Array;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -16,7 +11,7 @@ public class DictionaryManagement {
         return dictionary;
     }
 
-    void insertFromFile() {
+    public void insertFromFile() {
         try {
             String inp_url = "dictionaries.txt";
             File myFile = new File(inp_url);

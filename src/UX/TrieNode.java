@@ -1,7 +1,5 @@
 package UX;
 
-import java.util.Map;
-
 public class TrieNode {
     public boolean isEndOfWord;
     TrieNode[] child = new TrieNode[257];

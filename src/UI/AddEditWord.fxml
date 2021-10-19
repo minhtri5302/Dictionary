@@ -69,7 +69,7 @@
             </Group>
             <ImageView fitHeight="74.0" fitWidth="76.0" layoutX="14.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@dictionary-icon.png" />
+                  <Image url="/image/dictionary-icon.png" />
                </image>
             </ImageView>
             <TextField fx:id="wordType" layoutX="365.0" layoutY="279.0" prefHeight="52.0" prefWidth="361.0" promptText="nội động từ" style="-fx-font-size: 25; -fx-background-radius: 15;" />

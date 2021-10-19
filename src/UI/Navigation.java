@@ -1,6 +1,7 @@
 package UI;
 
-import UX.DictionaryCommandLine;
+import UX.DictionaryManagement;
+import UX.DictionaryManagement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,17 +14,17 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Navigation implements Initializable {
-    private DictionaryCommandLine dictionaryCommandLine;
+    private DictionaryManagement dictionaryManagement;
 
     public void initialize(URL location, ResourceBundle resources) {
     }
 
-    public void setDictionaryCommandLine(DictionaryCommandLine dictionaryCommandLine) {
-        this.dictionaryCommandLine = dictionaryCommandLine;
+    public void setDictionaryManagement(DictionaryManagement dictionaryManagement) {
+        this.dictionaryManagement = dictionaryManagement;
     }
 
-    public DictionaryCommandLine getDictionaryCommandLine() {
-        return this.dictionaryCommandLine;
+    public DictionaryManagement getDictionaryManagement() {
+        return this.dictionaryManagement;
     }
 
     public void goSearchWord(ActionEvent e) {
@@ -34,9 +35,9 @@ public class Navigation implements Initializable {
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             scene.getStylesheets().add
-                    ("/UI/navigation-button.css");
+                    ("/UI/css/navigation-button.css");
             SearchWordController controller = loader.getController();
-            controller.setDictionaryCommandLine(dictionaryCommandLine);
+            controller.setDictionaryManagement(dictionaryManagement);
             stage.setScene(scene);
         } catch (Exception ex) {
         }
@@ -50,9 +51,9 @@ public class Navigation implements Initializable {
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             scene.getStylesheets().add
-                    ("/UI/navigation-button.css");
+                    ("/UI/css/navigation-button.css");
             AddEditWordController controller = loader.getController();
-            controller.setDictionaryCommandLine(dictionaryCommandLine);
+            controller.setDictionaryManagement(dictionaryManagement);
             stage.setScene(scene);
         } catch (Exception ex) {
         }
@@ -66,9 +67,9 @@ public class Navigation implements Initializable {
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             scene.getStylesheets().add
-                    ("/UI/navigation-button.css");
+                    ("/UI/css/navigation-button.css");
             TranslateController controller = loader.getController();
-            controller.setDictionaryCommandLine(dictionaryCommandLine);
+            controller.setDictionaryManagement(dictionaryManagement);
             stage.setScene(scene);
         } catch (Exception ex) {
         }
@@ -82,9 +83,9 @@ public class Navigation implements Initializable {
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             scene.getStylesheets().add
-                    ("/UI/navigation-button.css");
+                    ("/UI/css/navigation-button.css");
             DeleteWordController controller = loader.getController();
-            controller.setDictionaryCommandLine(dictionaryCommandLine);
+            controller.setDictionaryManagement(dictionaryManagement);
             stage.setScene(scene);
         } catch (Exception ex) {
         }
@@ -98,9 +99,9 @@ public class Navigation implements Initializable {
             Parent viewParent = loader.load();
             Scene scene = new Scene(viewParent);
             IntroController controller = loader.getController();
-            controller.setDictionaryCommandLine(dictionaryCommandLine);
+            controller.setDictionaryManagement(dictionaryManagement);
             scene.getStylesheets().add
-                    ("/UI/navigation-button.css");
+                    ("/UI/css/navigation-button.css");
             stage.setScene(scene);
         } catch (Exception ex) {
         }

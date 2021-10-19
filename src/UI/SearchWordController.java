@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import UX.DictionaryCommandLine;
+import UX.DictionaryManagement;
 import UX.DictionaryPronunciation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,8 +27,8 @@ public class SearchWordController extends Navigation {
     public void initialize(URL location, ResourceBundle resources) {
         wordSearch.textProperty().addListener((observable, oldValue, newValue) -> {
             listView.getItems().clear();
-            DictionaryCommandLine x = getDictionaryCommandLine();
-            ArrayList<String> arrayList = getDictionaryCommandLine().getDictionaryManagement().getDictionary().getTrie().search(wordSearch.getText().trim());
+            DictionaryManagement x = getDictionaryManagement();
+            ArrayList<String> arrayList = getDictionaryManagement().getDictionary().getTrie().search(wordSearch.getText().trim());
             for (String s : arrayList) {
                 listView.getItems().add(s);
             }
@@ -39,7 +39,7 @@ public class SearchWordController extends Navigation {
     public void submitListView(MouseEvent event) {
         if (listView.getSelectionModel().getSelectedItem() != null) {
             String target = listView.getSelectionModel().getSelectedItem();
-            wordExplain.setText(getDictionaryCommandLine().getDictionaryManagement().searchWord(target));
+            wordExplain.setText(getDictionaryManagement().searchWord(target));
             wordTop.setText(target);
         }
     }
@@ -47,7 +47,7 @@ public class SearchWordController extends Navigation {
     public void submitSearch(ActionEvent event) {
         String target = wordSearch.getText();
         target = target.trim();
-        String explain = getDictionaryCommandLine().getDictionaryManagement().searchWord(target);
+        String explain = getDictionaryManagement().searchWord(target);
         wordExplain.setText(explain);
         wordTop.setText(target);
     }
@@ -56,7 +56,7 @@ public class SearchWordController extends Navigation {
         if (e.getCode() == KeyCode.ENTER) {
             String target = wordSearch.getText();
             target = target.trim();
-            String explain = getDictionaryCommandLine().getDictionaryManagement().searchWord(target);
+            String explain = getDictionaryManagement().searchWord(target);
             wordExplain.setText(explain);
             wordTop.setText(target);
         }

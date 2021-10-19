@@ -34,7 +34,7 @@ public class AddEditWordController extends Navigation {
             if(!wordType.getText().equals("")) explain += "\n\t" + wordType.getText() + ":\n";
             add = add.replace("\n", "\n\t\t-");
             explain += "\t\t-" + add;
-            if (!getDictionaryCommandLine().getDictionaryManagement().addWord(target, explain)) {
+            if (!getDictionaryManagement().addWord(target, explain)) {
                 alert.setText("Từ điển đã có từ này");
             } else {
                 alert.setText("Thêm từ '" + target + "' vào từ điển thành công");
@@ -58,7 +58,7 @@ public class AddEditWordController extends Navigation {
             if (!wordType.getText().equals("")) explain += "\n\t" + wordType.getText() + ":\n";
             add = add.replace("\n", "\n\t\t-");
             explain += "\t\t-" + add;
-            if (!getDictionaryCommandLine().getDictionaryManagement().editWord(target, explain)) {
+            if (!getDictionaryManagement().editWord(target, explain)) {
                 alert.setText("Từ điển chưa có từ này");
             } else {
                 alert.setTextFill(Color.web("#006400"));
