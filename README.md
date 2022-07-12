@@ -1,4 +1,4 @@
-# Dictionary-OOP
+# Dictionary
 
 ## Introduce
 Bài tập lớn số 1 môn lập trình hướng đối tượng: Xây dựng chương trình từ điển bằng Java
